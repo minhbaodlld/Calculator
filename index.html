@@ -8,15 +8,22 @@
 </head>
 <body>
     <h1>Calculator</h1>
+    <div id="note">
+        <h3>Note</h3>
+        <li>Keyboard supported</li>
+        <li>CE to clear all (tab)</li>
+        <li>C to clear current screen (`-backtick) </li>
+        <li>Backspace do what backspace does</li>
+    </div>
     <div id="calc">
         <div id="screen"></div>
         <!--<button class="button" type ="button">%</button>
         <button class="button" type ="button">√</button>
         <button class="button" type ="button">x²</button>
         <button class="button" type ="button">⅟x</button> -->
-        <button type ="button" id="clear-all" class='clean'>CE</button>
-        <button type ="button" id="clear" class='clean'>C</button>
-        <button type ="button" id="back-space" class='clean'><i class="fas fa-backspace"></i></button>
+        <button type ="button" id="clear-all" data-code="9" class='clean'>CE</button>
+        <button type ="button" id="clear" data-code="192" class='clean'>C</button>
+        <button type ="button" id="back-space"   class='clean'><i class="fas fa-backspace"></i></button>
         <button type ="button" id = '/' data-key="/" data-code="111 191" class='operator'>÷</button>
         <button type ="button" value="7" data-code="55 103">7</button>
         <button type ="button" value="8" data-code="56 104">8</button>

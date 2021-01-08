@@ -1,13 +1,16 @@
+//Assign HTML element to JS variable
 button = document.querySelectorAll('button');
 screen = document.getElementById('screen');
 clear = document.getElementById('clear');
 
 
+//Define Math action
 const add = (x, y) => x + y;
 const subtract = (x, y) => x - y;
 const multiply = (x, y) => x * y;
 const divide = (x, y) => x / y;
 
+//Object contains Math operators for easy access
 const operObj = {
   '+': add,
   '-': subtract,
@@ -40,7 +43,7 @@ const divideBy0 = () =>{
   }
 }
 
-//bind keyboard
+//bind keyboard to calculator buttons
 const keyboard = (e) => {
   const keycode = document.querySelector(`button[data-code ~= "${e.keyCode}"]`)
   if (!keycode) return
@@ -67,21 +70,23 @@ const commonProcess = () => {
 
 //Apply event to each button
 button.forEach(button => {
-  num = []
-  num1 = [];
-  num2 = [];
-  opt = '';
+  num = []    //number to display
+  num1 = [];  //first number in Math operation
+  num2 = [];  //second number in Math operation
+  opt = '';   //Math operator
 
- //Applay event to any button
+ //Apply event to any button
   button.addEventListener('click', e =>{
   
-  //Get number
+  //Get number, display on screen
   if(button.getAttribute('value') != null){
     store = button.getAttribute('value');
-    if (typeof(result) == 'undefined'){  
-      num.push(store);
-      display(store); 
-    }else if (typeof(result) == 'number') {   //result is clear from screen when new number is entered
+    if (typeof(result) == 'undefined'){       //Check if any operation was performed
+      num.push(store);                        //No -> display input number
+      display(store);
+      
+    //Yes -> result is clear from screen when new number is entered
+    }else if (typeof(result) == 'number') {   
       if (screen.textContent == `${result}`){  
         clearScreen();                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
       }                       
@@ -93,19 +98,14 @@ button.forEach(button => {
   // Take in Math operator
   else if (opt == '' && button.getAttribute('data-key') != null){
     clearScreen();
-    if(num1 = [] && button.clicked == true){
-      opt = button.getAttribute('data-key');
-      console.log(num2)  
-    }else{
     opt = button.getAttribute('id');
     num1 = parseFloat(Array.from(num).join(''));
     num = []
-    }
   }
   
   //Give result when press '='
   else if  (button.getAttribute('id') == 'equal') {
-    if (opt == '' ){                  //no error when no operator given and '=' is clicked 
+    if (opt == '' ){      //no error when no operator given and '=' is clicked 
       num = [];
       opt = '+';
     }

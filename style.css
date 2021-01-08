@@ -1,7 +1,37 @@
 body{
-    margin: 0;
+    margin-top: 10vh;
     padding: 0;
     text-align: center;
+    background-image: url(Math.png);
+    background-repeat: round;
+}
+
+h1{
+    color: rgb(255, 169, 9);
+}
+
+#note{
+    position: absolute;
+    text-align: left;
+    left: 70vw;
+    border: 1px solid black;
+    padding: 10px;
+    font-size: 20px;
+    font-weight: 600;
+    color: rgb(255, 145, 0);
+    background-color:whitesmoke
+
+}
+
+#note h3{
+    text-align: center;
+    margin: 0;
+    
+}
+
+#note li{
+    margin: 5px;
+    
 }
 
 #calc{
@@ -17,10 +47,10 @@ body{
 
 #screen{
     width: 30vw;
-    height: 1.5em;
-    margin: 1em 0 0.5em 0;
-    padding-top: 0.5em;
-    font-size: 1.5em;
+    height: 8vh;
+    margin: 3vh 0 1vh 0;
+    padding: 3vh 0 0 0;
+    font-size: 5vh;
     font-weight: 600;
     overflow: hidden;
     text-align: right;
@@ -37,7 +67,7 @@ button{
     width:  7.5vw;
     height: 9vh;
     margin: 1px;
-    font-size: 1em;
+    font-size: 1.3em;
     border: 1px solid #bbb8b8;
 }
 
